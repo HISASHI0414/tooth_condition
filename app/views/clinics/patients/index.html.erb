@@ -1,0 +1,10 @@
+<h1>Patients</h1>
+<% if @patients.any? %>
+  <ul>
+    <% @patients.each do |patient| %>
+      <li><%= link_to "#{patient.first_name} #{patient.last_name}", clinics_patient_path(@clinic, patient) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No patients registered.</p>
+<% end %>

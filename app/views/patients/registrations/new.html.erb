@@ -1,0 +1,29 @@
+<h1>マイページ作成</h1>
+
+<%= form_with model: @patient, url: patients_create_path do |f| %>
+  <%= f.hidden_field :id, value: @patient.id %>
+  <p>
+    <strong>歯科医院名:</strong> <%= Clinic.find(@patient.clinic_id).clinic_name %><br>
+    <strong>カルテNo.:</strong> <%= @patient.medical_record_no %><br>
+    <strong>氏名:</strong> <%= @patient.last_name %> <%= @patient.first_name %><br>
+    <strong>氏名（カナ）:</strong> <%= @patient.last_name_kana %> <%= @patient.first_name_kana %><br>
+    <strong>生年月日:</strong> <%= @patient.birth_date %><br>
+    <strong>性別:</strong> <%= @patient.gender %><br>
+  </p>
+  <p>
+    <%= f.label :email, "メールアドレス" %><br>
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.label :password, "パスワード" %><br>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, "パスワード確認" %><br>
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= f.submit "マイページ作成" %>
+  </p>
+<% end %>

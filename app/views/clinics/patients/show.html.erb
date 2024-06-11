@@ -1,0 +1,16 @@
+<h1>Patient Details</h1>
+
+<p><strong>Medical Record No:</strong> <%= @patient.medical_record_no %></p>
+<p><strong>Last Name:</strong> <%= @patient.last_name %></p>
+<p><strong>First Name:</strong> <%= @patient.first_name %></p>
+<p><strong>Last Name Kana:</strong> <%= @patient.last_name_kana %></p>
+<p><strong>First Name Kana:</strong> <%= @patient.first_name_kana %></p>
+<p><strong>Birth Date:</strong> <%= @patient.birth_date %></p>
+<p><strong>Gender:</strong> <%= @patient.gender %></p>
+
+<p>
+  <strong>QR Code:</strong><br>
+  <%= raw @patient.qr_code %>
+</p>
+
+<%= link_to 'Back', clinics_patients_path %>
